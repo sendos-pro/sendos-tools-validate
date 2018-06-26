@@ -22,5 +22,5 @@
     "dev": "npm run build && node test.js",
     "build": "babel src --out-dir build"
   },
-  "version": "1.0.7"
+  "version": "1.0.8"
 }

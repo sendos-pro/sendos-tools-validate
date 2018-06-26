@@ -62,7 +62,7 @@ class sendosToolsMailValidate {
       mxRecords: [],
       smtpMessages: [],
       options: {
-        timeout: timeout || 3000,
+        timeout: timeout || 10000,
         mailFrom: mailFrom || "stalker@" + _os2.default.hostname() || "stalker@example.org"
       }
     };
@@ -213,6 +213,10 @@ class sendosToolsMailValidate {
 
       smtp.setEncoding("ascii");
       smtp.setTimeout(timeout);
+
+      smtp.on("timeout", () => {
+        smtp.destroy({ code: "ETIMEDOUT" });
+      });
 
       smtp.on("error", err => {
         smtp.end(() => {
