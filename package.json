@@ -19,7 +19,8 @@
     "url": "git+https://github.com/sendos-pro/sendos-tools-validate.git"
   },
   "scripts": {
+    "dev": "npm run build && node test.js",
     "build": "babel src --out-dir build"
   },
-  "version": "1.0.6"
+  "version": "1.0.7"
 }

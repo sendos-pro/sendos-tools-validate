@@ -10,7 +10,7 @@ npm i sendos-tools-validate
 const validate = require('sendos-tools-validate');
 
 validate
-	.isValid('testers72@gmail.com')
+	.isValid('testers722+2@gmail.com')
 	.then(function(result) {
 		console.log(result);
 	})
